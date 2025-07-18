@@ -14,13 +14,14 @@ export default function Home() {
         work and job search journey.
       </p>
       <div className="mt-4">
+        <Link href="/projects" className="btn btn-primary me-2">
+          View Projects
+        </Link>
         <Link href="/blog" className="btn btn-primary me-2">
           Read the Blog
         </Link>
-        <Link href="/projects" className="btn btn-secondary">
-          View Projects
-        </Link>
       </div>
+      <h1 className="display-3">This site is a WIP - More to come!</h1>
     </div>
   );
 }

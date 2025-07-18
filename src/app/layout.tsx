@@ -16,10 +16,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body>
         <header>
           <Navbar />
-          <nav>
-            <h1>Ryan Jasinski</h1>
-            {"TODO: Add navlinks here"}
-          </nav>
         </header>
         <main>{children}</main>
         <footer>
