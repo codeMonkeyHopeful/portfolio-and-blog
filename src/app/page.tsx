@@ -1,6 +1,9 @@
-// import Image from "next/image";
-// import styles from "./page.module.css";
 import Link from "next/link";
+
+export const metadata = {
+  title: "Ryan Jasinski",
+  description: "Posts about coding, projects, and job search.",
+};
 
 export default function Home() {
   return (
