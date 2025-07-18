@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 // Enable bootstrap JS
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { BootstrapClientInit } from "@/components/index";
 
 export const metadata: Metadata = {
   title: "Create Next App",
