@@ -1,4 +1,6 @@
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Jobhunt Blog",
   description: "Follow my jobhunt journey",
 };
