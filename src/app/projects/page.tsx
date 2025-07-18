@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   description: "Pojects I've worked on.",
 };
 
-const Portfolio = ({}) => {
+const Projects = ({}) => {
   return <div>projects map here</div>;
 };
 
-export default Portfolio;
+export default Projects;

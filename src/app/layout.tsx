@@ -3,6 +3,7 @@ import "./globals.css";
 // Enable bootstrap JS
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { BootstrapClientInit } from "@/components/index";
+import { Navbar } from "@/app/index";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,6 +15,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body>
         <header>
+          <Navbar />
           <nav>
             <h1>Ryan Jasinski</h1>
             {"TODO: Add navlinks here"}
