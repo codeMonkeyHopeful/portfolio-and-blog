@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { NavLinkItem } from "@/components/NavigationBar/index";
+import { NavLinkItem, NavLinkHeader } from "@/components/NavigationBar/index";
 
 type NavLink = {
   text: string;
@@ -25,13 +25,7 @@ export const Navbar: FC = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        {/* <Link
-          href="/"
-          className="nav-link active navbar-brand"
-          aria-current="page"
-        >
-          {"My Coding Journey"}
-        </Link> */}
+        <NavLinkHeader />
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             {linkList.map((val, dex) => {
