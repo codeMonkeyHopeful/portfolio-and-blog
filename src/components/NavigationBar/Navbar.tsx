@@ -1,10 +1,6 @@
 import { FC } from "react";
 import { NavLinkItem, NavLinkHeader } from "@/components/NavigationBar/index";
-
-type NavLink = {
-  text: string;
-  href: string;
-};
+import { NavLink } from "@/types/NavigationBar";
 
 const linkList: NavLink[] = [
   {

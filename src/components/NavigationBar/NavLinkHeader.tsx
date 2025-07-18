@@ -1,12 +1,8 @@
 import { FC } from "react";
 import Link from "next/link";
+import { NavLink } from "@/types/NavigationBar";
 
 export const NavLinkHeader: FC = ({}) => {
-  type NavLink = {
-    text: string;
-    href: string;
-  };
-
   const headerLinkDetails: NavLink = {
     text: "My Coding Journey",
     href: "/",
