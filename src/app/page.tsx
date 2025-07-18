@@ -1,6 +1,9 @@
-// import Image from "next/image";
-// import styles from "./page.module.css";
 import Link from "next/link";
+
+export const metadata = {
+  title: "Ryan Jasinski",
+  description: "Posts about coding, projects, and job search.",
+};
 
 export default function Home() {
   return (
@@ -14,7 +17,7 @@ export default function Home() {
         <Link href="/blog" className="btn btn-primary me-2">
           Read the Blog
         </Link>
-        <Link href="/portfolio" className="btn btn-secondary">
+        <Link href="/projects" className="btn btn-secondary">
           View Projects
         </Link>
       </div>
