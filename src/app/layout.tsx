@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 // Enable bootstrap JS
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { BootstrapClientInit } from "@/components/index";
-import { Navbar } from "@/app/index";
+import { Navbar, Footer } from "@/app/index";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +18,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <header>
           <Navbar />
         </header>
-        <main>{children}</main>
+        <main className="main-content">{children}</main>
+        <Footer />
       </body>
     </html>
   );

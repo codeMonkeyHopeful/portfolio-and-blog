@@ -1,1 +1,1 @@
-export { Navbar } from "@/components/index";
+export { Navbar, Footer } from "@/components/index";

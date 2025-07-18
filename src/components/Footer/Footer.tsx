@@ -8,29 +8,23 @@ export const Footer: FC = () => {
           type="button"
           className="btn btn-primary btn-lg btn-floating mx-2"
         >
-          <i className="fab fa-facebook-f"></i>
+          <i className="bi bi-linkedin"></i>
         </button>
         <button
           type="button"
           className="btn btn-primary btn-lg btn-floating mx-2"
         >
-          <i className="fab fa-youtube"></i>
+          <i className="bi bi-github"></i>
         </button>
         <button
           type="button"
           className="btn btn-primary btn-lg btn-floating mx-2"
         >
-          <i className="fab fa-instagram"></i>
-        </button>
-        <button
-          type="button"
-          className="btn btn-primary btn-lg btn-floating mx-2"
-        >
-          <i className="fab fa-twitter"></i>
+          <i className="bi bi-envelope-fill"></i>
         </button>
       </div>
 
-      <div className="text-center text-white p-3">
+      <div className="text-center text-white">
         <p>&copy; {new Date().getFullYear()} Ryan Jasinski</p>
       </div>
     </footer>

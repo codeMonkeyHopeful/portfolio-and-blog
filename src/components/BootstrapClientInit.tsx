@@ -1,10 +1,12 @@
 "use client";
 import { useEffect } from "react";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap/dist/js/bootstrap.bundle.js";
 
 export const BootstrapClientInit = () => {
   useEffect(() => {
-    // @ts-expect-error Import working just need to ignore type, could also create type but
-    import("bootstrap/dist/js/bootstrap.bundle");
+    // import("bootstrap/dist/js/bootstrap.bundle");
+    return;
   }, []);
 
   return null;
