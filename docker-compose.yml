@@ -1,0 +1,40 @@
+services:
+  portfolio-and-blog:
+    build: .
+    ports:
+      - "${PORT}:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.portfolio.rule=Host(`${URL}`)"
+      - "traefik.http.routers.portfolio.entrypoints=websecure"
+      - "traefik.http.routers.portfolio.tls=true"
+
+      # Apply global HTTPS redirect middleware here to the HTTP router
+      - "traefik.http.routers.http-portfolio-redirect.rule=Host(`${URL}`)"
+      - "traefik.http.routers.http-portfolio-redirect.entrypoints=web"
+      - "traefik.http.routers.http-portfolio-redirect.middlewares=https-redirect"
+      - "traefik.http.routers.http-portfolio-redirect.service=portfolio"
+
+      - "traefik.http.routers.www-portfolio.rule=Host(`www.${URL}`)"
+      - "traefik.http.routers.www-portfolio.entrypoints=websecure"
+      - "traefik.http.routers.www-portfolio.tls=true"
+
+      # Apply global HTTPS redirect middleware here to the HTTP router
+      - "traefik.http.routers.http-www-portfolio-redirect.rule=Host(`www.${URL}`)"
+      - "traefik.http.routers.http-www-portfolio-redirect.entrypoints=web"
+      - "traefik.http.routers.http-www-portfolio-redirect.middlewares=https-redirect"
+      - "traefik.http.routers.http-www-portfolio-redirect.service=portfolio"
+
+      # Service port inside container
+      - "traefik.http.services.portfolio.loadbalancer.server.port=${PORT}"
+    restart: unless-stopped
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
