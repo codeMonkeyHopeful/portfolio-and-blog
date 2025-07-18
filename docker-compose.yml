@@ -1,6 +1,7 @@
 services:
-  portfolio-and-blog:
+  portfolio:
     build: .
+    container_name: portfolio
     ports:
       - "${PORT}:3000"
     env_file:
