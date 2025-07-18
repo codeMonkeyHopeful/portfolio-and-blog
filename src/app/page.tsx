@@ -14,7 +14,7 @@ export default function Home() {
         <Link href="/blog" className="btn btn-primary me-2">
           Read the Blog
         </Link>
-        <Link href="/projects" className="btn btn-secondary">
+        <Link href="/portfolio" className="btn btn-secondary">
           View Projects
         </Link>
       </div>
