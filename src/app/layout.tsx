@@ -14,9 +14,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body>
-        <header>
-          <Navbar />
-        </header>
+        <Navbar />
         <main className="main-content">{children}</main>
         <Footer />
       </body>
