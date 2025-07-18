@@ -1,7 +1,20 @@
 import { FC } from "react";
 import Link from "next/link";
 
-const navLinks = [{}];
+const navLinks = [
+  {
+    text: "Home",
+    href: "/",
+  },
+  {
+    text: "Projects",
+    href: "/portfolio",
+  },
+  {
+    text: "Job Search Blog",
+    href: "/blog",
+  },
+];
 
 export const Navbar: FC = () => {
   return (
