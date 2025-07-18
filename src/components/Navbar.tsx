@@ -8,7 +8,7 @@ const navLinks = [
   },
   {
     text: "Projects",
-    href: "/portfolio",
+    href: "/projects",
   },
   {
     text: "Job Search Blog",
@@ -27,18 +27,6 @@ export const Navbar: FC = () => {
         >
           {"My Coding Journey"}
         </Link>
-
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="true"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon">asdf</span>
-        </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
@@ -46,11 +34,19 @@ export const Navbar: FC = () => {
                 {"Home"}
               </Link>
             </li>
-            <Link href="/" className="nav-link active" aria-current="page">
+            <Link
+              href="/projects"
+              className="nav-link active"
+              aria-current="page"
+            >
               {"Projects"}
             </Link>
             <li className="nav-item">
-              <Link href="/" className="nav-link active" aria-current="page">
+              <Link
+                href="/blog"
+                className="nav-link active"
+                aria-current="page"
+              >
                 {"Job Search Blog"}
               </Link>
             </li>
