@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-// Enable bootstrap JS
+// Enable bootstrap JS and Icons
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { BootstrapClientInit } from "@/components/index";
 import { Navbar, Footer } from "@/app/index";
