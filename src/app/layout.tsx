@@ -18,9 +18,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           <Navbar />
         </header>
         <main>{children}</main>
-        <footer>
-          <p>&copy; {new Date().getFullYear()} Ryan Jasinski</p>
-        </footer>
       </body>
     </html>
   );
