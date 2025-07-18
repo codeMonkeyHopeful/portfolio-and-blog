@@ -21,9 +21,7 @@ export default function Home() {
           Read the Blog
         </Link>
       </div>
-      <h1 className="display-3">
-        Please note this site is a WIP - More to come!
-      </h1>
+      <h1 className="display-3">This site is a WIP - More to come!</h1>
     </div>
   );
 }
