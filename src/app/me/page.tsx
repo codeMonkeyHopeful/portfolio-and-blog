@@ -14,6 +14,7 @@ const Me = ({}) => {
         <small className="text-muted">WIP</small>
       </h3>
       <ul className="list-group">
+        <li className="list-group-item">why codemonkeyhopeful?!</li>
         <li className="list-group-item">first pc/tech</li>
         <li className="list-group-item">entry into coding</li>
         <li className="list-group-item">hobbies</li>

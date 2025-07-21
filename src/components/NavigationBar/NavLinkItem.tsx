@@ -1,6 +1,6 @@
-import { FC } from "react";
-import Link from "next/link";
-import { NavLink } from "@/types/NavigationBar";
+import { FC } from 'react';
+import Link from 'next/link';
+import { NavLink } from '@/types/NavigationBar';
 
 type NavLinkItemProps = {
   linkDetail: NavLink;
