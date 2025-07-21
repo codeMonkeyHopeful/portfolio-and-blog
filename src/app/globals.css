@@ -10,6 +10,14 @@ COLOR PALLET
 #c4b5fd
 #faf5ff
 
+
+Color Roles & Distribution:
+
+#1e1b4b (Deep Navy-Purple): Primary text, headers, navigation - your "authority" color (30-40%)
+#3730a3 (Rich Purple): Interactive elements, links, CTAs, section dividers (20-25%)
+#8b5cf6 (Bright Purple): Accent highlights, hover states, featured project cards, skill badges (15-20%)
+#c4b5fd (Light Purple): Backgrounds for cards, subtle highlights, code block backgrounds (10-15%)
+#faf5ff (Very Light Purple): Main background, content areas, breathing space (20-30%)
 */
 
 :root {
