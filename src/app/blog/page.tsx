@@ -254,19 +254,19 @@ export default function BlogPage() {
       <div className="row mb-4">
         <div className="col-lg-6 mx-auto">
           <div className="input-group input-group-lg">
-            <span className="input-group-text">
+            <span className="input-group-text btn-primary">
               <i className="bi bi-search"></i>
             </span>
             <input
               type="text"
-              className="form-control"
+              className="form-control bg-search"
               placeholder="Search posts, tags, or content..."
               value={state.searchTerm}
               onChange={(e) => handleSearchChange(e.target.value)}
             />
             {state.searchTerm && (
               <button
-                className="btn btn-outline-secondary"
+                className="btn-primary btn-outline-secondary"
                 type="button"
                 onClick={handleSearchClear}
               >
@@ -275,7 +275,7 @@ export default function BlogPage() {
             )}
           </div>
           {state.searchTerm && (
-            <small className="text-muted mt-2 d-block">
+            <small className="text-secondary mt-2 d-block">
               Found {state.filteredPosts.length} post
               {state.filteredPosts.length !== 1 ? 's' : ''} for &ldquo;
               {state.searchTerm}&rdquo;
@@ -351,7 +351,7 @@ export default function BlogPage() {
                   </ul>
                 </nav>
 
-                <div className="text-center text-muted">
+                <div className="text-center text-secondary">
                   <small>
                     Showing {startIndex + 1}-
                     {Math.min(
@@ -370,9 +370,9 @@ export default function BlogPage() {
         <div className="row">
           <div className="col-12 text-center">
             <div className="py-5">
-              <i className="bi bi-search display-1 text-muted mb-3"></i>
+              <i className="bi bi-search display-1 text-primary mb-3"></i>
               <h3>No posts found</h3>
-              <p className="text-muted">
+              <p className="text-primary">
                 {state.searchTerm
                   ? `No posts match your search for "${state.searchTerm}". Try different keywords.`
                   : 'No blog posts available yet. Check back soon!'}

@@ -128,7 +128,7 @@ a:hover {
 .bg-card {
   background-color: var(--card-background);
 }
-.bg-navbar {
+.bg-navbar .bg-search {
   background-color: var(--navbar-bg);
 }
 
