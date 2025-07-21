@@ -2,25 +2,66 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 /*
-COLOR PALLET
+Color Roles & Distribution:
 
-#1e1b4b
-#3730a3
-#8b5cf6
-#c4b5fd
-#faf5ff
+#1e1b4b (Deep Navy-Purple): Primary text, headers, navigation - your "authority" color (30-40%)
+#3730a3 (Rich Purple): Interactive elements, links, CTAs, section dividers (20-25%)
+#8b5cf6 (Bright Purple): Accent highlights, hover states, featured project cards, skill badges (15-20%)
+#c4b5fd (Light Purple): Backgrounds for cards, subtle highlights, code block backgrounds (10-15%)
+#faf5ff (Very Light Purple): Main background, content areas, breathing space (20-30%)
+
+Application Strategy:
+
+Use the darkest color for maximum readability on light backgrounds
+Reserve the bright purple (#8b5cf6) for "look at this!" moments - key achievements, featured projects
+The light purple (#c4b5fd) works great for subtle section breaks or alternating backgrounds
+Keep plenty of that almost-white (#faf5ff) for clean, readable content areas
+
+Professional + Personality Balance:
+
+Use the deeper purples for your technical content and resume sections
+Let the brighter purples shine in your project showcases and personal sections
+Consider using the bright purple for fun details like skill progress bars or project tags
+
+This palette communicates creativity and technical sophistication without being too flashy for potential employers. The gradient from deep to light gives you lots of flexibility for
 
 */
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Purple Color Palette */
+  --primary-dark: #1e1b4b; /* Deep navy-purple - main background */
+  --primary: #3730a3; /* Rich purple for content areas */
+  --accent: #8b5cf6; /* Bright purple for highlights, CTAs */
+  --accent-light: #c4b5fd; /* Light purple for cards, secondary elements */
+  --background-light: #faf5ff; /* Very light purple for navbar, content */
+
+  /* Semantic color assignments */
+  --background: var(--primary-dark); /* Dark background */
+  --foreground: var(--background-light); /* Light text on dark bg */
+  --navbar-bg: var(--background-light); /* Light navbar */
+  --navbar-text: var(--primary-dark); /* Dark text on light navbar */
+  --text-primary: var(--background-light);
+  --text-secondary: var(--accent-light);
+  --link-color: var(--accent);
+  --link-hover: var(--accent-light);
+  --card-background: var(--primary);
+  --button-primary: var(--accent);
+  --button-accent: var(--accent-light);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark mode keeps the same scheme since you already prefer dark */
+    --background: var(--primary-dark);
+    --foreground: var(--background-light);
+    --navbar-bg: var(--background-light);
+    --navbar-text: var(--primary-dark);
+    --text-primary: var(--background-light);
+    --text-secondary: var(--accent-light);
+    --link-color: var(--accent);
+    --link-hover: var(--accent-light);
+    --card-background: var(--primary);
+    --button-primary: var(--accent);
+    --button-accent: var(--accent-light);
   }
 }
 
@@ -58,8 +99,430 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--link-color);
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* Additional utility classes for your color palette */
+.text-primary {
+  color: var(--text-primary);
+}
+.text-secondary {
+  color: var(--text-secondary);
+}
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+.bg-accent {
+  background-color: var(--accent);
+}
+.bg-card {
+  background-color: var(--card-background);
+}
+.bg-navbar {
+  background-color: var(--navbar-bg);
+}
+
+.btn-primary {
+  background-color: var(--button-primary);
+  color: var(--primary-dark);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--button-accent);
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background-color: var(--button-accent);
+  color: var(--primary-dark);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Navbar specific styling */
+.navbar {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+}
+
+.navbar a {
+  color: var(--navbar-text);
+}
+
+.navbar a:hover {
+  color: var(--primary);
+}
+
+/* Layout & Spacing Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-sm {
+  padding: 2rem 0;
+}
+.section-lg {
+  padding: 6rem 0;
+}
+
+/* Flexbox Utilities */
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.items-center {
+  align-items: center;
+}
+.items-start {
+  align-items: flex-start;
+}
+.items-end {
+  align-items: flex-end;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-1 {
+  flex: 1;
+}
+
+/* Grid Utilities */
+.grid {
+  display: grid;
+}
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.gap-4 {
+  gap: 1rem;
+}
+.gap-6 {
+  gap: 1.5rem;
+}
+.gap-8 {
+  gap: 2rem;
+}
+
+/* Typography Utilities */
+.text-xs {
+  font-size: 0.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+}
+.text-base {
+  font-size: 1rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+.font-light {
+  font-weight: 300;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-bold {
+  font-weight: 700;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+.leading-tight {
+  line-height: 1.25;
+}
+.leading-normal {
+  line-height: 1.5;
+}
+.leading-relaxed {
+  line-height: 1.75;
+}
+
+/* Spacing Utilities */
+.m-0 {
+  margin: 0;
+}
+.m-2 {
+  margin: 0.5rem;
+}
+.m-4 {
+  margin: 1rem;
+}
+.m-6 {
+  margin: 1.5rem;
+}
+.m-8 {
+  margin: 2rem;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mt-6 {
+  margin-top: 1.5rem;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
+}
+.ml-0 {
+  margin-left: 0;
+}
+.ml-2 {
+  margin-left: 0.5rem;
+}
+.ml-4 {
+  margin-left: 1rem;
+}
+.mr-0 {
+  margin-right: 0;
+}
+.mr-2 {
+  margin-right: 0.5rem;
+}
+.mr-4 {
+  margin-right: 1rem;
+}
+
+.p-0 {
+  padding: 0;
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.p-4 {
+  padding: 1rem;
+}
+.p-6 {
+  padding: 1.5rem;
+}
+.p-8 {
+  padding: 2rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Border & Radius Utilities */
+.border {
+  border: 1px solid var(--accent-light);
+}
+.border-accent {
+  border: 1px solid var(--accent);
+}
+.border-primary {
+  border: 1px solid var(--primary);
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+.rounded-md {
+  border-radius: 0.375rem;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* Shadow Utilities */
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.shadow-purple {
+  box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.25);
+}
+
+/* Card Component */
+.card {
+  background-color: var(--card-background);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(139, 92, 246, 0.25);
+}
+
+/* Portfolio/Project specific classes */
+.project-card {
+  background-color: var(--card-background);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  border: 1px solid var(--accent-light);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(139, 92, 246, 0.3);
+}
+
+.skill-badge {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--primary-dark);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .section {
+    padding: 2rem 0;
+  }
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  .flex-row {
+    flex-direction: column;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
