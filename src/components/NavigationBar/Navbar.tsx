@@ -23,7 +23,7 @@ const linkList: NavLink[] = [
 
 export const Navbar: FC = () => {
   return (
-    <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg sticky-top  bg-navbar">
       <div className="container-fluid">
         <NavLinkHeader />
         <div className="collapse navbar-collapse" id="navbarNav">
