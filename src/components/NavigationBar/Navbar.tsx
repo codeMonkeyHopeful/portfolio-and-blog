@@ -8,6 +8,10 @@ const linkList: NavLink[] = [
     href: "/",
   },
   {
+    text: "About Me",
+    href: "/me",
+  },
+  {
     text: "Projects",
     href: "/projects",
   },
