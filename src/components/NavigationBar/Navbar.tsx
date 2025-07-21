@@ -1,29 +1,29 @@
-import { FC } from "react";
-import { NavLinkItem, NavLinkHeader } from "@/components/NavigationBar/index";
-import { NavLink } from "@/types/NavigationBar";
+import { FC } from 'react';
+import { NavLinkItem, NavLinkHeader } from '@/components/NavigationBar/index';
+import { NavLink } from '@/types/NavigationBar';
 
 const linkList: NavLink[] = [
   {
-    text: "Home",
-    href: "/",
+    text: 'Home',
+    href: '/',
   },
   {
-    text: "About Me",
-    href: "/me",
+    text: 'About Me',
+    href: '/me',
   },
   {
-    text: "Projects",
-    href: "/projects",
+    text: 'Projects',
+    href: '/projects',
   },
   {
-    text: "Job Search Blog",
-    href: "/blog",
+    text: 'Job Search Blog',
+    href: '/blog',
   },
 ];
 
 export const Navbar: FC = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light">
       <div className="container-fluid">
         <NavLinkHeader />
         <div className="collapse navbar-collapse" id="navbarNav">
