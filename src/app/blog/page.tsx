@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { BlogPostCard } from "@/components/Blog";
-import type { BlogPost, BlogPageState } from "@/types/Blog";
+import { useState, useEffect } from 'react';
+import { BlogPostCard } from '@/components/Blog';
+import type { BlogPost, BlogPageState } from '@/types/Blog';
 
 export default function BlogPage() {
   // State for blog functionality
   const [state, setState] = useState<BlogPageState>({
     posts: [],
     filteredPosts: [],
-    searchTerm: "",
+    searchTerm: '',
     currentPage: 1,
     loading: true,
     error: null,
     filters: {
-      searchTerm: "",
+      searchTerm: '',
       selectedTags: [],
     },
   });
@@ -32,73 +32,73 @@ export default function BlogPage() {
         const mockPosts: BlogPost[] = [
           {
             id: 1,
-            title: "Getting Started with Next.js 13",
+            title: 'Getting Started with Next.js 13',
             content:
-              "Exploring the new App Router and Server Components in Next.js 13. This is a comprehensive guide covering all the new features and how to migrate from the Pages Router.",
-            date: "2024-07-15",
-            author: "Ryan Jasinski",
-            tags: ["nextjs", "react", "webdev"],
-            slug: "getting-started-nextjs-13",
+              'Exploring the new App Router and Server Components in Next.js 13. This is a comprehensive guide covering all the new features and how to migrate from the Pages Router.',
+            date: '2024-07-15',
+            author: 'Ryan Jasinski',
+            tags: ['nextjs', 'react', 'webdev'],
+            slug: 'getting-started-nextjs-13',
           },
           {
             id: 2,
-            title: "Building a Home Lab for Development",
+            title: 'Building a Home Lab for Development',
             content:
-              "Setting up a complete development environment with Traefik, Docker, and self-hosted services. Perfect for learning DevOps and hosting your own projects.",
-            date: "2024-07-10",
-            author: "Ryan Jasinski",
-            tags: ["homelab", "docker", "devops"],
-            slug: "building-home-lab",
+              'Setting up a complete development environment with Traefik, Docker, and self-hosted services. Perfect for learning DevOps and hosting your own projects.',
+            date: '2024-07-10',
+            author: 'Ryan Jasinski',
+            tags: ['homelab', 'docker', 'devops'],
+            slug: 'building-home-lab',
           },
           {
             id: 3,
-            title: "Job Hunt Chronicles: Week 3",
+            title: 'Job Hunt Chronicles: Week 3',
             content:
-              "Reflections on the software engineering job search process, including interview experiences, technical challenges, and lessons learned along the way.",
-            date: "2024-07-05",
-            author: "Ryan Jasinski",
-            tags: ["career", "job-search", "software-engineering"],
-            slug: "job-hunt-week-3",
+              'Reflections on the software engineering job search process, including interview experiences, technical challenges, and lessons learned along the way.',
+            date: '2024-07-05',
+            author: 'Ryan Jasinski',
+            tags: ['career', 'job-search', 'software-engineering'],
+            slug: 'job-hunt-week-3',
           },
           {
             id: 4,
-            title: "CSS Grid vs Flexbox: When to Use What",
+            title: 'CSS Grid vs Flexbox: When to Use What',
             content:
-              "A practical guide to choosing between CSS Grid and Flexbox for different layout scenarios. Includes real-world examples and best practices.",
-            date: "2024-06-28",
-            author: "Ryan Jasinski",
-            tags: ["css", "frontend", "layout"],
-            slug: "css-grid-vs-flexbox",
+              'A practical guide to choosing between CSS Grid and Flexbox for different layout scenarios. Includes real-world examples and best practices.',
+            date: '2024-06-28',
+            author: 'Ryan Jasinski',
+            tags: ['css', 'frontend', 'layout'],
+            slug: 'css-grid-vs-flexbox',
           },
           {
             id: 5,
-            title: "Optimizing React Performance",
+            title: 'Optimizing React Performance',
             content:
-              "Deep dive into React performance optimization techniques including memo, useMemo, useCallback, and component structure best practices.",
-            date: "2024-06-20",
-            author: "Ryan Jasinski",
-            tags: ["react", "performance", "optimization"],
-            slug: "optimizing-react-performance",
+              'Deep dive into React performance optimization techniques including memo, useMemo, useCallback, and component structure best practices.',
+            date: '2024-06-20',
+            author: 'Ryan Jasinski',
+            tags: ['react', 'performance', 'optimization'],
+            slug: 'optimizing-react-performance',
           },
           {
             id: 6,
-            title: "Database Design Fundamentals",
+            title: 'Database Design Fundamentals',
             content:
-              "Essential principles of database design, normalization, and when to break the rules. Covers both SQL and NoSQL approaches.",
-            date: "2024-06-15",
-            author: "Ryan Jasinski",
-            tags: ["database", "sql", "design"],
-            slug: "database-design-fundamentals",
+              'Essential principles of database design, normalization, and when to break the rules. Covers both SQL and NoSQL approaches.',
+            date: '2024-06-15',
+            author: 'Ryan Jasinski',
+            tags: ['database', 'sql', 'design'],
+            slug: 'database-design-fundamentals',
           },
           {
             id: 7,
-            title: "Deploying with Docker and Traefik",
+            title: 'Deploying with Docker and Traefik',
             content:
-              "Complete guide to deploying applications using Docker containers and Traefik reverse proxy, including SSL certificate management.",
-            date: "2024-06-10",
-            author: "Ryan Jasinski",
-            tags: ["docker", "traefik", "deployment"],
-            slug: "deploying-docker-traefik",
+              'Complete guide to deploying applications using Docker containers and Traefik reverse proxy, including SSL certificate management.',
+            date: '2024-06-10',
+            author: 'Ryan Jasinski',
+            tags: ['docker', 'traefik', 'deployment'],
+            slug: 'deploying-docker-traefik',
           },
         ];
 
@@ -112,7 +112,7 @@ export default function BlogPage() {
         setState((prev) => ({
           ...prev,
           loading: false,
-          error: "Failed to load blog posts",
+          error: 'Failed to load blog posts',
         }));
       }
     };
@@ -122,7 +122,7 @@ export default function BlogPage() {
 
   // Handle search
   useEffect(() => {
-    if (state.searchTerm.trim() === "") {
+    if (state.searchTerm.trim() === '') {
       setState((prev) => ({
         ...prev,
         filteredPosts: prev.posts,
@@ -157,7 +157,7 @@ export default function BlogPage() {
   const handlePageChange = (pageNumber: number) => {
     setState((prev) => ({ ...prev, currentPage: pageNumber }));
     // Scroll to top of blog section
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Handle search change
@@ -167,7 +167,7 @@ export default function BlogPage() {
 
   // Handle search clear
   const handleSearchClear = () => {
-    setState((prev) => ({ ...prev, searchTerm: "" }));
+    setState((prev) => ({ ...prev, searchTerm: '' }));
   };
 
   // Generate pagination numbers
@@ -182,18 +182,18 @@ export default function BlogPage() {
     } else {
       if (state.currentPage <= 3) {
         for (let i = 1; i <= 4; i++) pages.push(i);
-        pages.push("...");
+        pages.push('...');
         pages.push(totalPages);
       } else if (state.currentPage >= totalPages - 2) {
         pages.push(1);
-        pages.push("...");
+        pages.push('...');
         for (let i = totalPages - 3; i <= totalPages; i++) pages.push(i);
       } else {
         pages.push(1);
-        pages.push("...");
+        pages.push('...');
         for (let i = state.currentPage - 1; i <= state.currentPage + 1; i++)
           pages.push(i);
-        pages.push("...");
+        pages.push('...');
         pages.push(totalPages);
       }
     }
@@ -243,7 +243,7 @@ export default function BlogPage() {
       <div className="row mb-5">
         <div className="col-12 text-center">
           <h1 className="display-4 fw-bold mb-3">Blog</h1>
-          <p className="lead text-muted">
+          <p className="lead text-secondary">
             Thoughts on software development, career moves, and technical
             adventures
           </p>
@@ -254,19 +254,19 @@ export default function BlogPage() {
       <div className="row mb-4">
         <div className="col-lg-6 mx-auto">
           <div className="input-group input-group-lg">
-            <span className="input-group-text">
+            <span className="input-group-text btn-primary">
               <i className="bi bi-search"></i>
             </span>
             <input
               type="text"
-              className="form-control"
+              className="form-control bg-search"
               placeholder="Search posts, tags, or content..."
               value={state.searchTerm}
               onChange={(e) => handleSearchChange(e.target.value)}
             />
             {state.searchTerm && (
               <button
-                className="btn btn-outline-secondary"
+                className="btn-primary btn-outline-secondary"
                 type="button"
                 onClick={handleSearchClear}
               >
@@ -275,9 +275,9 @@ export default function BlogPage() {
             )}
           </div>
           {state.searchTerm && (
-            <small className="text-muted mt-2 d-block">
+            <small className="text-secondary mt-2 d-block">
               Found {state.filteredPosts.length} post
-              {state.filteredPosts.length !== 1 ? "s" : ""} for &ldquo;
+              {state.filteredPosts.length !== 1 ? 's' : ''} for &ldquo;
               {state.searchTerm}&rdquo;
             </small>
           )}
@@ -300,10 +300,10 @@ export default function BlogPage() {
             <div className="row">
               <div className="col-12">
                 <nav aria-label="Blog pagination">
-                  <ul className="pagination pagination-lg justify-content-center">
+                  <ul className="pagination pagination-lg justify-content-center btn">
                     <li
                       className={`page-item ${
-                        state.currentPage === 1 ? "disabled" : ""
+                        state.currentPage === 1 ? 'disabled' : ''
                       }`}
                     >
                       <button
@@ -319,10 +319,10 @@ export default function BlogPage() {
                       <li
                         key={index}
                         className={`page-item ${
-                          page === state.currentPage ? "active" : ""
-                        } ${page === "..." ? "disabled" : ""}`}
+                          page === state.currentPage ? 'active' : ''
+                        } ${page === '...' ? 'disabled' : ''}`}
                       >
-                        {page === "..." ? (
+                        {page === '...' ? (
                           <span className="page-link">...</span>
                         ) : (
                           <button
@@ -337,7 +337,7 @@ export default function BlogPage() {
 
                     <li
                       className={`page-item ${
-                        state.currentPage === totalPages ? "disabled" : ""
+                        state.currentPage === totalPages ? 'disabled' : ''
                       }`}
                     >
                       <button
@@ -351,13 +351,13 @@ export default function BlogPage() {
                   </ul>
                 </nav>
 
-                <div className="text-center text-muted">
+                <div className="text-center text-secondary">
                   <small>
                     Showing {startIndex + 1}-
                     {Math.min(
                       startIndex + POSTS_PER_PAGE,
                       state.filteredPosts.length
-                    )}{" "}
+                    )}{' '}
                     of {state.filteredPosts.length} posts
                   </small>
                 </div>
@@ -370,12 +370,12 @@ export default function BlogPage() {
         <div className="row">
           <div className="col-12 text-center">
             <div className="py-5">
-              <i className="bi bi-search display-1 text-muted mb-3"></i>
+              <i className="bi bi-search display-1 text-primary mb-3"></i>
               <h3>No posts found</h3>
-              <p className="text-muted">
+              <p className="text-primary">
                 {state.searchTerm
                   ? `No posts match your search for "${state.searchTerm}". Try different keywords.`
-                  : "No blog posts available yet. Check back soon!"}
+                  : 'No blog posts available yet. Check back soon!'}
               </p>
               {state.searchTerm && (
                 <button className="btn btn-primary" onClick={handleSearchClear}>

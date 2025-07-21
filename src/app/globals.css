@@ -128,7 +128,7 @@ a:hover {
 .bg-card {
   background-color: var(--card-background);
 }
-.bg-navbar {
+.bg-navbar .bg-search {
   background-color: var(--navbar-bg);
 }
 
@@ -468,16 +468,28 @@ a:hover {
 
 /* Card Component */
 .card {
-  background-color: var(--card-background);
+  background-color: var(--accent-light); /* Lighter purple instead of dark */
   border-radius: 0.5rem;
   padding: 1.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: var(--primary-dark); /* Ensure dark text on light card */
 }
 
 .card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px -5px rgba(139, 92, 246, 0.25);
+}
+
+/* Bootstrap compatibility overrides */
+.text-dark {
+  color: var(--primary-dark) !important;
+}
+.text-muted {
+  color: var(--primary) !important;
+}
+.bg-primary {
+  background-color: var(--accent) !important;
 }
 
 /* Portfolio/Project specific classes */
@@ -529,4 +541,78 @@ a:hover {
   html {
     color-scheme: dark;
   }
+}
+
+/* Override Bootstrap pagination with your purple theme */
+.pagination {
+  --bs-pagination-bg: var(--card-background);
+  --bs-pagination-border-color: var(--accent-light);
+  --bs-pagination-color: var(--text-primary);
+  --bs-pagination-hover-color: var(--primary-dark);
+  --bs-pagination-hover-bg: var(--accent);
+  --bs-pagination-hover-border-color: var(--accent);
+  --bs-pagination-active-color: var(--primary-dark);
+  --bs-pagination-active-bg: var(--accent);
+  --bs-pagination-active-border-color: var(--accent);
+  --bs-pagination-disabled-color: var(--text-secondary);
+  --bs-pagination-disabled-bg: var(--primary);
+  --bs-pagination-disabled-border-color: var(--accent-light);
+}
+
+/* Alternative method - Direct class overrides */
+.page-link {
+  background-color: var(--card-background) !important;
+  border-color: var(--accent-light) !important;
+  color: var(--text-primary) !important;
+  transition: all 0.3s ease;
+}
+
+.page-link:hover {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: var(--primary-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(139, 92, 246, 0.25);
+}
+
+.page-link:focus {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: var(--primary-dark) !important;
+  box-shadow: 0 0 0 0.2rem rgba(139, 92, 246, 0.25) !important;
+}
+
+.page-item.active .page-link {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: var(--primary-dark) !important;
+}
+
+.page-item.disabled .page-link {
+  background-color: var(--primary) !important;
+  border-color: var(--accent-light) !important;
+  color: var(--text-secondary) !important;
+  cursor: not-allowed;
+}
+
+/* Optional: Add some spacing and rounded corners for modern look */
+.pagination .page-item {
+  margin: 0 2px;
+}
+
+.pagination .page-link {
+  border-radius: 0.5rem !important;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+}
+
+/* Icon styling for chevrons */
+.page-link .bi {
+  font-size: 0.9rem;
+}
+
+/* Enhanced hover effects */
+.page-item:not(.disabled):not(.active) .page-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-purple);
 }
