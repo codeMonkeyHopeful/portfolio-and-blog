@@ -1,5 +1,16 @@
 /* Import Bootstrap */
-@import "bootstrap/dist/css/bootstrap.min.css";
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/*
+COLOR PALLET
+
+#1e1b4b
+#3730a3
+#8b5cf6
+#c4b5fd
+#faf5ff
+
+*/
 
 :root {
   --background: #ffffff;
