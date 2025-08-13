@@ -1,0 +1,16 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /login
+Disallow: /signup
+Disallow: /profile/
+Disallow: /api/
+Disallow: /user/
+
+# Host
+Host: https://ryan-jasinski.com
+
+# Sitemaps
+Sitemap: https://ryan-jasinski.com/sitemap.xml
