@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev && next-sitemap",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -24,6 +24,7 @@
     "@types/react-dom": "^19.1.6",
     "eslint": "^9",
     "eslint-config-next": "15.4.1",
+    "next-sitemap": "^4.2.3",
     "typescript": "^5"
   }
 }
