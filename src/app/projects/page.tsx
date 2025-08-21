@@ -1,3 +1,4 @@
+import { ProjectsList } from '@/components/Projects';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 const Projects = ({}) => {
-  return <div>projects map here</div>;
+  return <ProjectsList />;
 };
 
 export default Projects;
