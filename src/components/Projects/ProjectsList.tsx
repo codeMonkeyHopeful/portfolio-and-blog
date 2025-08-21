@@ -8,11 +8,19 @@ export const ProjectsList: FC = ({}) => {
         <div className="card-body text-center">
           <h5 className="card-title">Projects</h5>
         </div>
-        <table className="table">
+        <table className="table table-hover align-middle text-center table-bordered">
           <thead>
-            <th scope="col">Project Name</th>
-            <th scope="col">Link</th>
-            <th scope="col">Why Did I Make It?</th>
+            <tr>
+              <th scope="col" className="col-auto">
+                Project Name
+              </th>
+              <th scope="col" className="col-auto">
+                Link
+              </th>
+              <th scope="col" className="col-auto">
+                Why Did I Make It?
+              </th>
+            </tr>
           </thead>
           <tbody>
             {projectLinkPlaceholder.map((el) => {
