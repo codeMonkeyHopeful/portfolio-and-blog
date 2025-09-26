@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 export const Footer: FC = () => {
   return (
@@ -21,7 +21,7 @@ export const Footer: FC = () => {
           </button>
         </a>
         <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&su=Emailing%20About%20Your%20Website&to=jasinski.17@gmail.com"
+          href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&su=Emailing%20About%20Your%20Website&to=ryan@ryan-jasinski.com"
           target="_blank"
         >
           <button
