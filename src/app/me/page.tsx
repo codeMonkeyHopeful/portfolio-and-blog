@@ -1,3 +1,4 @@
+import { Section } from '@/components/AboutMe';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,6 +10,7 @@ const Me = ({}) => {
   // TODO Fill in
   return (
     <div>
+      <Section title="About Me" description="Lorem Placeholder" />
       <h3>
         Topics
         <small className="text-muted">WIP</small>
