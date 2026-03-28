@@ -1,13 +1,15 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export const metadata = {
-  title: "Ryan Jasinski",
-  description: "Posts about coding, projects, and job search.",
+  title: 'Ryan Jasinski',
+  description: 'Posts about coding, projects, and job search.',
 };
 
 export default function Home() {
   return (
-    <div className="container py-5">
+    <div className="container py-5 text-center">
+      <h1 className="display-3 pb-5">This site is a WIP - More to come!</h1>
+
       <h1>Code, Projects, and Career Moves</h1>
       <p className="lead">
         A blog and portfolio by <strong>Ryan Jasinski</strong>, documenting my
@@ -21,7 +23,6 @@ export default function Home() {
           Read the Blog
         </Link>
       </div>
-      <h1 className="display-3">This site is a WIP - More to come!</h1>
     </div>
   );
 }
