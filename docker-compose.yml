@@ -10,13 +10,13 @@ services:
       - NODE_ENV=production
     labels:
       - 'traefik.enable=true'
-      - 'traefik.http.routers.portfolio.rule=Host(`${URL}`)'
+      - 'traefik.http.routers.portfolio.rule=Host(`${URL}`) || Host(`codemonkeyhopeful.com`)'
       - 'traefik.http.routers.portfolio.entrypoints=websecure'
       - 'traefik.http.routers.portfolio.tls=true'
       - 'traefik.http.routers.portfolio.tls.certresolver=letsencrypt'
 
       # Apply global HTTPS redirect middleware here to the HTTP router
-      - 'traefik.http.routers.http-portfolio-redirect.rule=Host(`${URL}`)'
+      - 'traefik.http.routers.http-portfolio-redirect.rule=Host(`${URL}`) || Host(`codemonkeyhopeful.com`)'
       - 'traefik.http.routers.http-portfolio-redirect.entrypoints=web'
       - 'traefik.http.routers.http-portfolio-redirect.middlewares=https-redirect'
       - 'traefik.http.routers.http-portfolio-redirect.service=portfolio'
@@ -26,7 +26,7 @@ services:
       - 'traefik.http.routers.www-portfolio.tls=true'
 
       # Apply global HTTPS redirect middleware here to the HTTP router
-      - 'traefik.http.routers.http-www-portfolio-redirect.rule=Host(`www.${URL}`)'
+      - 'traefik.http.routers.http-www-portfolio-redirect.rule=Host(`www.${URL}`) || Host(`www.codemonkeyhopeful.com`)'
       - 'traefik.http.routers.http-www-portfolio-redirect.entrypoints=web'
       - 'traefik.http.routers.http-www-portfolio-redirect.middlewares=https-redirect'
       - 'traefik.http.routers.http-www-portfolio-redirect.service=portfolio'
