@@ -21,7 +21,7 @@ services:
       - 'traefik.http.routers.http-portfolio-redirect.middlewares=https-redirect'
       - 'traefik.http.routers.http-portfolio-redirect.service=portfolio'
 
-      - 'traefik.http.routers.www-portfolio.rule=Host(`www.${URL}`)'
+      - 'traefik.http.routers.www-portfolio.rule=Host(`www.${URL}`) || Host(`www.codemonkeyhopeful.com`)'
       - 'traefik.http.routers.www-portfolio.entrypoints=websecure'
       - 'traefik.http.routers.www-portfolio.tls=true'
 
